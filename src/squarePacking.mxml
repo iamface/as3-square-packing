@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600" initialize="init()">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import classes.SquarePacking;
+			
+			import mx.core.UIComponent;
+			private function init():void{
+				 var ui:UIComponent = new UIComponent();
+				addElement(ui);
+				
+				var sp:SquarePacking = new SquarePacking();
+				
+				var squares:Array = new Array(5,10,15,20,25,30);
+				sp.fillGrid(500,500,5,squares);
+				ui.addChild(sp);
+			}
+		]]>
+	</fx:Script>
+</s:Application>
